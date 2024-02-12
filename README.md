@@ -1,6 +1,6 @@
-# Frontend Mentor - Chat app CSS illustration
+# Frontend Mentor - Advice generator app
 
-![Design preview for the Chat app CSS illustration coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Advice generator app coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
 
@@ -8,26 +8,27 @@ Thanks for checking out this front-end coding challenge.
 
 [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-**To do this challenge, you need a strong understanding of HTML and CSS.**
+**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
 
 ## The challenge
 
-Your challenge is to build out this feature illustration using HTML & CSS and get it looking as close to the design as possible.
+Your challenge is to build out this advice generator app using the [Advice Slip API](https://api.adviceslip.com) and get it looking as close to the design as possible.
 
-The only assets we provide in this challenge are the image of the person in the app UI and the 3 images of the dog. You need to create everything else using HTML & CSS!
+You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
 Your users should be able to:
 
-- View the optimal layout for the component depending on their device's screen size
-- **Bonus**: See the chat interface animate on the initial load
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Generate a new piece of advice by clicking the dice icon
 
 Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
 
 ## Where to find everything
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
 
 If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
 
