@@ -58,6 +58,13 @@ body {
     border-radius: 10px;
     padding-inline: 50px;
     cursor: pointer;
+    transition: all 0.5s;
+}
+
+#rule-button:hover {
+    background-color: white;
+    color: hsl(229, 25%, 31%);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 #rule-ckb {
@@ -397,6 +404,7 @@ div[idx="2"]::after {
     color: hsl(229, 25%, 31%);
     font-weight: 600;
     cursor: pointer;
+    transition: color 0.5s, box-shadow 0.5s;
 }
 
 #replay-button:hover {
