@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root {
+    --text_col: rgba(112,157,155,255);
+}
+
+body {
+    margin: 0;
+    background-color: rgba(240,250,251,255);
+    font-family: "League Spartan", sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+body > svg {
+    /* width: 100vw; */
+    height: 25vh;
+    background-color: rgba(93,165,164,255);
+}
+
+#frame {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    height: 100px;
+    /* display: flex;    
+    flex-direction: column; */
+}
+
+#filter-bar {
+    color: var(--text_col);
+    font-weight: 600;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    min-height: 50px;
+    transform: translate(0, -50%);
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 30px;
+    align-items: center;
+    padding-block: 5px;
+}
+
+#filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-item {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.filter-item div {
+    background-color: rgba(239,249,248,255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.filter-remove {
+    background-color: rgba(96,163,162,255);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s;
+}
+
+.filter-remove svg{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.filter-remove:hover {
+    background-color: rgba(41,57,57,255);
+    /* transition: background-color 0.5s; */
+}
+
+#clear-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#job-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* background-color: white; */
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    padding: 20px;
+}
+
+.job {
+    padding: 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.job-info {
+    display: flex;
+    flex-basis: 50%;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+}
+
+.status, .detail{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.company {
+    color: var(--text_col);
+    font-weight: 700;
+}
+
+.new, .featured{
+    color: white;
+    background-color: var(--text_col);
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 10px;
+    visibility: hidden;
+}
+
+.featured {
+    background-color: rgba(39,53,53,255);
+}
+
+.name {
+    color: rgba(46,56,55,255);
+    font-size: 1.5em;
+    font-weight: 800;
+    transition: color 0.5s;
+    cursor: pointer;
+}
+
+.name:hover {
+    color: var(--text_col);
+}
+
+.detail {
+    color: grey;
+    gap: 20px;
+}
+
+.categories {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.categories * {
+    padding: 10px;
+    background-color: rgba(236,246,245,255);
+    color: var(--text_col);
+    border-radius: 5px;
+    transition: background-color 0.5s, color 0.5s;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.categories label:hover, .categories div:hover {
+    background-color: rgba(92,164,164,255);
+    color: white;
+}
+
+.unhide {
+    visibility: visible !important;
+}
+
+.job:has(.featured.unhide) {
+    border-left: 5px solid var(--text_col);
+}
+
+@media screen and (max-width: 770px) {
+    .job img {
+        position: absolute;
+        top: 0;
+        transform: translate(-25%, -50%) scale(0.5);
+    }
+
+    .job {
+        flex-direction: column !important;
+        gap: 20px;
+    }
+
+    .job .info {
+        gap: 10px;
+    }
+
+    .job .categories {
+        border-top: 1px solid grey;
+        padding-top: 10px;
+        justify-content: start;
+    }
+}
+
+label {
+    display: block;
+}
+
+.filter-role {
+    display: none;
+    input {
+        display: none;
+    }
+    div {
+        display: none;
+    }
+}
+
+.filter-role:has(input:checked){
+    display: flex;
+}
+
+.filter-role > input:checked + div {
+    display: flex;
+}
+
+body:has(#Frontend:checked) :not([role="Frontend"]).job{
+    display: none;
+}
+
+body:has(#Backend:checked) :not([role="Backend"]).job{
+    display: none;
+}
+
+body:has(#Junior:checked) :not([level="Junior"]).job{
+    display: none;
+}
+
+
+body:has(#Midweight:checked) :not([level="Midweight"]).job{
+    display: none;
+}
+
+body:has(#Senior:checked) :not([level="Senior"]).job{
+    display: none;
+}
+
+body:has(#Fullstack:checked) :not([level="Fullstack"]).job{
+    display: none;
+}
+
+.filter-level:has(input:checked){
+    display: flex;
+}
+
+.filter-level > input:checked + div {
+    display: flex;
+}
+
+.filter-level {
+    display: none;
+    input {
+        display: none;
+    }
+    div {
+        display: none;
+    }
+}
+
+.filter-item input {
+    display: none;
+}
+
+.filter-item {
+    display: none;
+}
+
+.filter-item:has(input:checked) {
+    display: flex;
+}
+
+body:has(#HTML:checked) {
+    :not([need~="HTML"]).job {
+        display: none;
+    }
+}
+
+body:has(#Python:checked) {
+    :not([need~="Python"]).job {
+        display: none;
+    }
+}
+
+body:has(#Ruby:checked) {
+    :not([need~="Ruby"]).job {
+        display: none;
+    }
+}
+
+body:has(#JavaScript:checked) {
+    :not([need~="JavaScript"]).job {
+        display: none;
+    }
+}
+
+
+body:has(#CSS:checked) {
+    :not([need~="CSS"]).job {
+        display: none;
+    }
+}
+
+body:has(#React:checked) {
+    :not([need~="React"]).job {
+        display: none;
+    }
+}
+
+body:has(#Sass:checked) {
+    :not([need~="Sass"]).job {
+        display: none;
+    }
+}
+
+body:has(#Vue:checked) {
+    :not([need~="Vue"]).job {
+        display: none;
+    }
+}
+
+body:has(#Django:checked) {
+    :not([need~="Django"]).job {
+        display: none;
+    }
+}
+
+body:has(#RoR:checked) {
+    :not([need~="RoR"]).job {
+        display: none;
+    }
+}
+
+#inp-container {
+    display: none;
+}
